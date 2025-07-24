@@ -48,7 +48,6 @@ The endpoint expects the request body in JSON format with the following required
       "lastname": "Doe"
     },
     "email": "example@example.com"
-    // ...other user properties
   }
 }
 ```
