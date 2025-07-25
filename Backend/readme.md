@@ -76,6 +76,40 @@ The endpoint expects the request body in JSON format with the following required
 }
 ```
 
+
+## `/users/login` Endpoint
+
+### HTTP Method
+
+`POST`
+
+## Description
+
+Authenticates an existing user using email and password. Returns a JWT token and user information if credentials are correct.
+
+
+## Request Data
+The request body must be in JSON format and include the following fields:
+
+- **email**: *String* (must be a valid email address)
+- **password**: *String* (minimum 6 characters)
+
+### Sample Success Response
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "_id": "62d...",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "example@example.com"
+  }
+}
+```
+
+
 ## Notes
 - Ensure that the request body includes all required fields.
 - The endpoint validation uses `express-validator` to enforce data integrity.
