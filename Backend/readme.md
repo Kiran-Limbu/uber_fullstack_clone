@@ -109,8 +109,68 @@ The request body must be in JSON format and include the following fields:
 }
 ```
 
-
 ## Notes
 - Ensure that the request body includes all required fields.
 - The endpoint validation uses `express-validator` to enforce data integrity.
-- In case of errors during user creation (e.g., missing fields), the endpoint will return a 400 response with error details.
+- In case of errors during user creation (e.g., missing fields), the 
+endpoint will return a 400 response with error details.
+
+
+
+## `users/profile` Endpoint 
+
+### HTTP Method
+`GET`
+
+### Description
+Fetches the authenticated user's profile. Requires a valid JWT token in the request (either via cookie or `Authorization` header). Returns the user object associated with the token.
+
+### Authentication Required
+Yes — the user must be logged in.
+
+### Success Response
+
+- **Status Code:** `200 OK`
+- **Response Body:**
+```json
+{
+"_id": "62d...",
+"fullname": {
+  "firstname": "John",
+  "lastname": "Doe"
+},
+"email": "example@example.com"
+}
+
+```
+
+
+### Fail Response
+```json
+{
+  "message": "Authentication required"
+}
+```
+
+## `users/logout` Endpoint 
+
+### HTTP Method
+`GET`
+
+## Description
+Logs out the currently authenticated user. This route:
+1. Clears the JWT token stored in cookies (if present)
+2. Extracts the token from either cookie or `Authorization` header
+3. Stores the token in a blacklist to prevent reuse
+
+## Success Response
+
+- **Status Code:** `200 OK`
+- **Response Body:**
+```json
+{
+"message": "User logged out successfully"
+}
+
+### Note :
+Once logged out, the user’s token is invalidated, and future requests using that token will be rejected.
