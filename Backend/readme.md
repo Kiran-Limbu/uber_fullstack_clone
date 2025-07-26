@@ -171,6 +171,7 @@ Logs out the currently authenticated user. This route:
 {
 "message": "User logged out successfully"
 }
+```
 
-### Note :
+## Note:
 Once logged out, the user’s token is invalidated, and future requests using that token will be rejected.
