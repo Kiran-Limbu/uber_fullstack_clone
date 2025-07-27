@@ -180,7 +180,7 @@ Once logged out, the user’s token is invalidated, and future requests using th
 # Captain Registration Endpoint Documentation
 
 ## Endpoint
-`/captain/register`
+`/captains/register`
 
 ### HTTP Method
 `POST`
@@ -224,3 +224,86 @@ The request must be sent in JSON format and contain the following fields:
     "vehicleType": "car"
   }
 }
+```
+
+---
+
+
+## Endpoint
+`/captains/login`
+
+
+### Method
+`POST`
+
+### Description
+Authenticates a registered captain using their email and password. On successful authentication, returns a JWT token and the captain's profile info. The token is also set in cookies for session management.
+
+### Request Body
+
+- **email**: `String` — Required, must be a valid email format
+- **password**: `String` — Required, minimum 6 characters
+
+### 📦 Sample Request
+```json
+{
+  "email": "raju@example.com",
+  "password": "securePass123"
+}
+```
+
+
+## Endpoint
+`/captains/profile`
+
+## Mehod
+`get`
+
+## Description
+Description: Returns the authenticated captain's profile. Requires JWT in cookie or Authorization header.
+
+#### Authentication Required: Yes
+
+---
+
+
+###  Success Response (200 OK):
+```json
+{
+  "captain": {
+    "_id": "abc123",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "vehicle": {
+      "type": "Sedan",
+      "color": "Blue",
+      "plateNumber": "XYZ-1234",
+      "capacity": 4
+    }
+  }
+}
+```
+---
+
+
+
+## Endpoint
+`/captains/logout`
+
+## Method
+`get`
+
+## Description
+ Logs out the captain. Invalidates the JWT by clearing the cookie and optionally blacklisting the token.
+
+
+#### Authentication Required: Yes
+
+### Success Response (200 OK):
+ ```json
+{ "message": "Logged out successfully." }
+```
+
+### Notes
+ Middleware checks the token and clears it. After logout, the token is no longer usable.
