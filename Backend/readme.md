@@ -175,3 +175,52 @@ Logs out the currently authenticated user. This route:
 
 ## Note:
 Once logged out, the user’s token is invalidated, and future requests using that token will be rejected.
+
+
+# Captain Registration Endpoint Documentation
+
+## Endpoint
+`/captain/register`
+
+### HTTP Method
+`POST`
+
+## Description
+This endpoint registers a new captain. It validates all required input fields, creates a new captain account, hashes the password, and returns a JWT token along with the newly created captain’s information.
+
+---
+
+## 🧾 Request Body
+
+The request must be sent in JSON format and contain the following fields:
+    
+- **fullname**: Object with:
+  - **firstname**: `String` – Required, min 3 characters
+  - **lastname**: `String` – Optional, min 3 characters (if provided)
+- **email**: `String` – Required, must be a valid email
+- **password**: `String` – Required, min 6 characters
+- **vehicle**: Object with:
+  - **color**: `String` – Required, min 3 characters
+  - **plate**: `String` – Required, min 3 characters
+  - **capacity**: `Number` – Required, min 1
+  - **vehicleType**: `String` – Required, must be one of: `"car"`, `"motorcycle"`, `"auto"`
+
+---
+
+### 🔍 Sample Request Body
+
+```json
+{
+  "fullname": {
+    "firstname": "Raju",
+    "lastname": "Thapa"
+  },
+  "email": "raju@example.com",
+  "password": "securePass123",
+  "vehicle": {
+    "color": "Red",
+    "plate": "BA1234",
+    "capacity": 4,
+    "vehicleType": "car"
+  }
+}
