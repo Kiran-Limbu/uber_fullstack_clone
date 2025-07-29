@@ -233,7 +233,7 @@ The request must be sent in JSON format and contain the following fields:
 `/captains/login`
 
 
-### Method
+### HTTP Method
 `POST`
 
 ### Description
@@ -291,7 +291,7 @@ Description: Returns the authenticated captain's profile. Requires JWT in cookie
 ## Endpoint
 `/captains/logout`
 
-## Method
+## HTTP Method
 `get`
 
 ## Description
