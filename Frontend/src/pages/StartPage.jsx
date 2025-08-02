@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import bgImage from "../assets/images/bg-image.avif"
 import icon from '../assets/images/Uber-logo.png'
 
-const HomePage = () => {
+const StartPage = () => {
   return (
     <div className="w-full h-screen">
       <div 
@@ -31,4 +30,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default StartPage;
