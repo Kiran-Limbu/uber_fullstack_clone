@@ -6,11 +6,10 @@ export default function GlobalState({ children }) {
   const [user , setUser] = useState({});
   const [captain , setCaptain] = useState({});
   const [isLoading , setIsLoading ] = useState(false);
-    
   return (
     <GlobalContext.Provider
-      value={{
-        user,
+    value={{
+      user,
         setUser,
         captain, 
         setCaptain,

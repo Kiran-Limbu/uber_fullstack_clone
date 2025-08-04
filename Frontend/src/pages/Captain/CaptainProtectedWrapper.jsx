@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContex";
-import { Loader } from "rsuite";
 import axios from "axios";
 
 const CaptainProtectedWrapper = ({ children }) => {
@@ -37,9 +36,9 @@ const CaptainProtectedWrapper = ({ children }) => {
     });
 
   if (isLoading) {
-    return (
+    return ( 
       <div className="flex items-center justify-center">
-        <Loader size="md" content="Medium" />
+      <span>Loading.......</span>
       </div>
     );
   }
