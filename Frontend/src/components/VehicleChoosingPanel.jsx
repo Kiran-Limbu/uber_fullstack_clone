@@ -19,7 +19,7 @@ const VehicleChoosingPanel = ({ setVehiclePanel, vehiclePanel, setSelectedVehicl
             transition={{ ease: [0.25, 1, 0.5, 1], duration: 1 }}
             className="fixed w-full bottom-0 z-10 bg-white px-2"
           >
-            <div className="flex justify-around items-center">
+            <div className="flex justify-between items-center px-5">
               <p className="font-semibold text-2xl px-2 py-3">
                 Choose Your Vehicle
               </p>

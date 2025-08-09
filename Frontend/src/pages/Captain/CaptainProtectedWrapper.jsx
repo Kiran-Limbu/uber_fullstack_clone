@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../context/GlobalContex";
 import axios from "axios";
 
 const CaptainProtectedWrapper = ({ children }) => {
   const token = localStorage.getItem("token");
-  const { isLoading, setIsLoading,  setCaptain } =
-    useContext(GlobalContext);
+  const { isLoading, setIsLoading, setCaptain } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,20 +24,20 @@ const CaptainProtectedWrapper = ({ children }) => {
     })
     .then((response) => {
       if (response.status === 200) {
-        setCaptain(response.data.captain);
+        setCaptain(response.data);
         setIsLoading(false);
       }
     })
     .catch((err) => {
       console.log(err);
       localStorage.removeItem("token");
-      navigate("/captain-login");
+      navigate("/captain-home");
     });
 
   if (isLoading) {
-    return ( 
+    return (
       <div className="flex items-center justify-center">
-      <span>Loading.......</span>
+        <span>Loading.......</span>
       </div>
     );
   }

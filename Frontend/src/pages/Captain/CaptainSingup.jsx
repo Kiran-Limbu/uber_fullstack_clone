@@ -56,21 +56,21 @@ const CaptainSingup = () => {
     setVehicleType("");
   };
   return (
-    <div className="w-full h-screen py-4 bg-zinc-300">
-      <div className="flex items-center justify-center ">
+    <div className="w-full h-screen bg-zinc-300">
+      <div className="flex items-center justify-center w-full flex-wrap">
         <form
           onSubmit={(e) => {
             submitHandlerCaptain(e);
           }}
-          className="rounded-lg flex flex-col items-center gap-5 py-5"
+          className="rounded-lg flex flex-col items-center gap-3 py-4 px-5"
           action=""
         >
-          <h1 className="text-4xl tracking-tighter leading-none font-bold pb-5">
+          <h1 className="text-4xl tracking-tight leading-none font-bold pb-5">
             Create New Account As Captain
           </h1>
-          <div className="flex justify-center gap-3">
+          <div className="flex justify-center gap-3 w-full px-5">
             <input
-              className="w-fit px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
+              className="w-1/2 px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
               required
               value={firstName}
               onChange={(event) => {
@@ -80,7 +80,7 @@ const CaptainSingup = () => {
               placeholder="Firstname"
             />
             <input
-              className="w-fit px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
+              className="w-1/2 px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
               required
               type="text"
               value={lastName}
@@ -110,7 +110,7 @@ const CaptainSingup = () => {
             type="password"
             placeholder="Password"
           />
-          <p className="font-semibold text-3xl">Your Vehicle Information :</p>
+          <p className="font-semibold text-3xl leading-none tracking-tighter my-5">Your Vehicle Information :</p>
           <div className="flex gap-3">
             <input
               type="text"
@@ -160,7 +160,7 @@ const CaptainSingup = () => {
               <option value="motorcycle">Motorcycle</option>{" "}
             </select>
           </div>
-          <button className="bg-zinc-700 w-1/2 py-3 rounded-md text-white font-semibold text-md cursor-pointer  hover:opacity-95 transition-all">
+          <button className="bg-zinc-700 my-4 w-1/2 py-3 rounded-md text-white font-semibold text-md cursor-pointer  hover:opacity-95 transition-all">
             Create Account
           </button>
           <div className="font-semibold text-md opacity-80">
@@ -170,7 +170,7 @@ const CaptainSingup = () => {
             </Link>
           </div>
 
-          <footer className="opacity-50 text-sm font-semibold w-1/2 tracking-tight leading-none">
+          <footer className="opacity-50 text-sm font-semibold max-w-full tracking-tight leading-none">
             By continuing, you agree to Uber's{" "}
             <span className="underline cursor-pointer">Terms of Service</span>{" "}
             and acknowledge you've read our{" "}

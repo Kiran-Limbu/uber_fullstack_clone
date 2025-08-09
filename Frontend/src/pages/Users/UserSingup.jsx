@@ -50,15 +50,15 @@ const UserSingup = () => {
           onSubmit={(e) => {
             submitHandlerUser(e);
           }}
-          className="bg-zinc-300 rounded-lg flex flex-col items-center gap-7 py-5"
+          className="bg-zinc-300 rounded-lg flex flex-col items-center gap-4 py-5"
           action=""
         >
           <h1 className="text-4xl tracking-tighter leading-none font-bold pb-5">
             Create New Account As User
           </h1>
-          <div className="flex justify-center gap-3">
+          <div className="flex justify-center gap-3 w-full px-5">
             <input
-              className="w-fit px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
+              className="w-1/2 px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
               required
               value={firstName}
               onChange={(event) => {
@@ -68,7 +68,7 @@ const UserSingup = () => {
               placeholder="Firstname"
             />
             <input
-              className="w-fit px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
+              className="w-1/2 px-3 py-3 border-zinc-800 border-[1px] rounded-lg"
               required
               type="text"
               value={lastName}

@@ -3,6 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 
 const LocationSearchPanel = ({setVehiclePanel, setPanelOpen}) => {
   
+  //dummy data
   const places = [
   {
     name: "Kathmandu Durbar Square",

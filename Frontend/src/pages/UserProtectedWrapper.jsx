@@ -10,6 +10,8 @@ const UserProtectedWrapper = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsLoading(true);
+    
     if (!token) {
       navigate("/login");
     }
