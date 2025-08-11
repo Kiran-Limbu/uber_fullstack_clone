@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import logo from "../assets/images/Uber-logo.png";
 import { AnimatePresence, motion } from "motion/react";
 import { RiArrowDownWideLine } from "react-icons/ri";
@@ -7,7 +7,8 @@ import VehicleChoosingPanel from "../components/VehicleChoosingPanel";
 import SelectedVehicle from "../components/SelectedVehicle";
 import LookingForDriver from "../components/LookingForDriver";
 import WaitForDrivers from "../components/WaitForDrivers";
-import Riding from "./Riding";
+import { Link } from "react-router-dom";
+import { LuLogOut } from "react-icons/lu";
 
 const Home = () => {
   const [pickUp, setPickUp] = useState("");
@@ -17,6 +18,7 @@ const Home = () => {
   const [selectedVehiclePanel, setSelectedVehiclePanel] = useState(false);
   const [lookingForRide, setLookingForRide] = useState(false);
   const [watingForDriver, setWatingForDriver] = useState(false);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -29,6 +31,13 @@ const Home = () => {
           src={logo}
           alt=""
         />
+         <div className=" bg-zinc-600 h-9 w-9 flex items-center justify-center z-99 rounded-full absolute right-0">
+          <Link
+          to="/login"
+          >
+            <LuLogOut />
+          </Link>
+        </div>
         <img
           className="h-screen w-screen bg-center object-cover"
           src="https://camo.githubusercontent.com/e0debd25d05c84be78d89bf7a2858c65e3cfecd72e95bd22ec50e85fa1f84cfb/68747470733a2f2f322e62702e626c6f6773706f742e636f6d2f2d574f70483738393364526b2f5733527372626f476678492f41414141414141414356552f767a6b39683975526262415777485633366a5455644b4f555552795946322d6167434c63424741732f73313630302f73637265656e73686f74362e706e67"

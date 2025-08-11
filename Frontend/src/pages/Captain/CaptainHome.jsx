@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LuLogOut } from "react-icons/lu";
 import uberlogo from "../../assets/images/Uber-logo.png";
 import CaptainDetails from "../../components/CaptainDetails";
@@ -16,7 +16,9 @@ function CaptainHome() {
           <img className="h-17" src={uberlogo} alt="" />
         </div>
         <div className=" bg-zinc-600 h-9 w-9 flex items-center justify-center rounded-full">
-          <Link to="/captain-login">
+          <Link
+          to="/captain-login"
+          >
             <LuLogOut />
           </Link>
         </div>
